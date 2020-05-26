@@ -1,0 +1,178 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	/* 添加到文本的修饰，下划线、上划线、删除线等 */
+}
+
+input,
+button {
+	border: none;
+	background: transparent;
+	/* 背景透明 */
+	outline: none;
+	/* 设置元素周围的轮廓 */
+	color: #FFFFFF;
+}
+
+body {
+	height: 100vh;
+	/* 1vh等于视口高度的1%  1vw等于视口宽度的1% */
+	background: linear-gradient(#141e30, #243b55);
+	/* linear-gradient用于创建一个线性渐变的 "图像" */
+	font-size: 16px;
+	color: #FFFFFF;
+	display: flex;
+	/* Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性 */
+	justify-content: center;
+	/* justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 */
+	align-items: center;
+	/* align-items 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。 */
+}
+
+.loginBox {
+	width: 400px;
+	height: 364px;
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 15px 25px rgba(0, 0, 0, .6);
+	padding: 40px;
+	box-sizing: border-box;
+}
+
+.h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.item {
+	height: 45px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #fff;
+	position: relative;
+}
+
+input {
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+	box-sizing: border-box;
+	/* 为元素设定的宽度和高度决定了元素的边框盒,就是说,为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。 */
+}
+
+.item label {
+	position: absolute;
+	left: 0px;
+	top: 12px;
+	color: #03e9f4;
+	transition: all 0.5s;
+	/* 用于设置四个过渡属性 */
+}
+
+/* :valid 选择器在表单元素的值需要根据指定条件验证时设置指定样式 */
+.item input:focus+label,
+.item input:valid+label {
+	/* 相邻同胞选择器，focus的input标签后 第一个label标签  */
+	top: 0px;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+.btn {
+	display: inline-block;
+	/* 行内块元素 */
+	padding: 10px 20px;
+	color: #03e9f4;
+	margin-top: 40px;
+	position: relative;
+	overflow: hidden;
+	transition: 0.5s;
+	text-transform: uppercase;
+	/* 属性控制文本的大小写。定义仅有大写字母。 */
+}
+
+.btn:hover {
+	background: #03e9f4;
+	border-radius: 5px;
+	/* 添加圆角的边框 */
+	color: #fff;
+	box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+	/* 向框添加一个或多个阴影 */
+}
+
+.btn span {
+	position: absolute;
+}
+
+.btn span:nth-child(1) {
+	/* 规定属于其父元素的第一个子元素(即第一个span)的样式 */
+	left: -100%;
+	top: 0;
+	width: 100%;
+	height: 2px;
+	background: -webkit-linear-gradient(left, transparent, #03e9f4);
+	/* 图像渐变 */
+	animation: line1 1s linear infinite;
+	/* 使用简写属性，将动画与 div 元素绑定 */
+}
+
+@keyframes line1 {
+
+	50%,
+	100% {
+		left: 100%;
+	}
+}
+
+.btn span:nth-child(2) {
+	right: 0;
+	top: -100%;
+	width: 2px;
+	height: 100%;
+	background: -webkit-linear-gradient(top, transparent, #03e9f4);
+	animation: line2 1s 0.25s linear infinite;
+}
+
+@keyframes line2 {
+
+	50%,
+	100% {
+		top: 100%;
+	}
+}
+
+.btn span:nth-child(3) {
+	left: 100%;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: -webkit-linear-gradient(left, #03e9f4, transparent);
+	animation: line3 1s 0.5s linear infinite;
+}
+
+@keyframes line3 {
+
+	50%,
+	100% {
+		left: -100%;
+	}
+}
+
+.btn span:nth-child(4) {
+	left: 0;
+	top: 100%;
+	width: 2px;
+	height: 100%;
+	background: -webkit-linear-gradient(top, #03e9f4, transparent);
+	animation: line4 1s 0.75s linear infinite;
+}
+
+@keyframes line4 {
+
+	50%,
+	100% {
+		top: -100%;
+	}
+}
