@@ -1,0 +1,67 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+	background: linear-gradient(rgb(95, 95, 250) 10%, rgb(3, 3, 110));
+
+}
+
+.main,
+.wave {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	/* Transform属性应用于元素的2D或3D转换。这个属性允许你将元素旋转，缩放，移动，倾斜等。 */
+	/* translate()函数是css3的新特性.在不知道自身宽高的情况下，可以利用它来进行水平垂直居中.。 */
+	/* translate(-50%,-50%) 作用是，往上（x轴）,左（y轴）移动自身长宽的 50%，以使其居于中心位置。 */
+	transform: translate(-50%, -50%);
+}
+
+.main {
+	border: 3px solid darkturquoise;
+	padding: 10px;
+}
+
+.wave {
+	background: darkturquoise;
+	/* overflow 属性规定当内容溢出元素框时发生的事情。 */
+	overflow: hidden;
+}
+
+.wave:after {
+	content: "";
+	width: 300px;
+	height: 300px;
+	background: rgba(255, 255, 255, 0.8);
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, -60%);
+	border-radius: 40%;
+	/* infinite 一直重复动画 */
+	animation: wave 5s linear infinite;
+}
+
+.wave:before {
+	content: "waterpolo";
+	position: absolute;
+	color: darkturquoise;
+	left: 50%;
+	top: 0px;
+	z-index: 99;
+	transform: translate(-50%,30px);
+	text-transform: uppercase;  //将字母变为大写
+}
+
+@keyframes wave {
+	100% {
+		/* rotate 定义 2D 旋转，在参数中规定角度。 */
+		transform: translate(-50%, -60%) rotate(360deg);
+	}
+}
