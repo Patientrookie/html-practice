@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000000;
+}
+
+a {
+    /* 这个属性允许对文本设置某种效果，如加下划线。如果后代元素没有自己的装饰，祖先元素上设置的装饰会“延伸”到后代元素中。不要求用户代理支持 blink。 */
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 24px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    width: 400px;
+    height: 100px;
+    color: #ffffff;
+    line-height: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+a:hover {
+    /* infinite 无限循环 */
+    animation: time 10s infinite;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    /* 边框线的类型：solid（实线） */
+    /* border: 1px solid red; */
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 50px;
+    /* filter 滤镜 滤镜通常使用百分比 */
+    /* blur 给图像设置高斯模糊 不接受百分比值 */
+    filter: blur(20px);
+    /* z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面 Z-index 仅能在定位元素上奏效（例如 position:absolute;） */
+    /* 该属性设置一个定位元素沿 z 轴的位置，z 轴定义为垂直延伸到显示区的轴。如果为正数，则离用户更近，为负数则表示离用户更远。 */
+    z-index: -1;
+}
+
+
+a:hover::before {
+    animation: time 8s infinite;
+}
+
+/* keyframes 创建动画 从一个样式变化为另一个样式 */
+@keyframes time{
+    /* 0% 是动画开始的时间; 100%是动画结束的时间 */
+    100% {
+        /* background-position 设置背景图像的起始位置 */
+        background-position: -400% 0;
+    }
+}
