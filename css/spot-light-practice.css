@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #222222;
+    /* 弹性盒子是CSS3的一种新的布局模式  flexbox是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局模式 */
+    /* 弹性盒子由弹性容器(Flex container)和弹性子元素(Flex item)组成。
+       弹性容器通过设置 display 属性的值为 flex 或 inline-flex将其定义为弹性容器。
+       弹性容器内包含了一个或多个弹性子元素。
+     */
+    /* 弹性布局 START*/
+    display: flex;
+    /* 在弹性盒对象的 <div> 元素中的各项周围留有空白： 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 */
+    justify-content: center;
+    /* 居中对齐弹性盒的各项 <div> 元素： align-items 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式 */
+    align-items: center;
+    min-height: 100vh;
+    /* 弹性布局 END */
+}
+
+h1 {
+    color: #333333;
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform 属性向元素应用2D或者3D转换 该属性允许我们对元素进行旋转、缩放、移动和倾斜
+    transform: translate(-50%,-50%); */
+    text-transform: uppercase;
+    font-size: 8rem;
+    position: relative;
+}
+
+h1::after {
+    content: "spot-light";
+    /*transparent用来指定全透明色彩transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值*/color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: -webkit-linear-gradient(left,#c23616,#192a56,#00d2d3,yellow,#6D214F,#2e86de,#4cd137,#e84118);
+    /*属性规定背景的绘制区域。*/background-clip: text;
+    -webkit-background-clip: text;
+    /*通过掩蔽和剪裁来隐藏部分元素*/clip-path: circle(100px at 0% 50%);
+    -webkit-clip-path: circle(100px at 0% 50%);
+    animation: light 5s infinite;
+    -webkit-animation: light 5s infinite;
+}
+
+@keyframes light{
+    0%{
+        clip-path: circle(100px at 0% 50%);
+        -webkit-clip-path: circle(100px at 0% 50%); 
+    }
+    50% {
+        clip-path: circle(100px at 100% 50%);
+        -webkit-clip-path: circle(100px at 100% 50%);
+    }
+    100% {
+        clip-path: circle(100px at 0% 50%);
+        -webkit-clip-path: circle(100px at 0% 50%);
+    }
+}
