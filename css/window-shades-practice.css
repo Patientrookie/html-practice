@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../img/window-shades/bg.png);
+}
+
+.main {
+    width: 805px;
+    height: 320px;
+    margin: 150px auto;
+    overflow: hidden;
+}
+
+.main:hover li{
+    width: 40px;
+}
+
+.main li:hover {
+    width: 640px;
+}
+
+ul ol {
+    /* list-style: none 是用来去掉li前面的小圆点 */
+    list-style: none;
+}
+
+li {
+    width: 160px;
+    float: left;
+    border-left: 1px solid #ffffff;
+    position: relative;
+    /* transition: property duration timing-function delay; 是一个过渡效果 */
+    /* property 规定设置过渡效果的 CSS 属性的名称。*/
+    /* duration 规定完成过渡效果需要多少秒或毫秒。 */
+    /* timing-function 规定速度效果的速度曲线。 */
+    /* delay 定义过渡效果何时开始。 */
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+.flag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* height 和 line-height 不一样的点 在于 line-height设置的只是一行的高度 如果line-height为30px,而有两行的话,height则为60px */
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+}
