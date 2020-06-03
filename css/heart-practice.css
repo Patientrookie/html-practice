@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    bottom: 0;
+}
+
+body {
+    background: #ffffff;
+    animation: bgchange 20s ease infinite;
+    -webkit-animation: bgchange 20s ease infinite;
+}
+
+.heart {
+    width: 200px;
+    height: 200px;
+    background-color: #eb3f84;
+    border: 1px solid #000000;
+    margin: 200px auto;
+    position: relative;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    animation: heart 20s ease infinite;
+    -webkit-animation: heart 20s ease infinite;
+}
+
+.heart::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: #eb3f84;
+    border: 1px solid springgreen;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    animation: heartbefore 20s ease infinite;
+    -webkit-animation: heartbefore 20s ease infinite;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all 5s ease;
+    -webkit-transition: all 5s ease;
+    -moz-transition: all 5s ease;
+    -ms-transition: all 5s ease;
+    -o-transition: all 5s ease;
+}
+
+.heart::after {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: #eb3f84;
+    border: 1px solid yellowgreen;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    animation: heartafter 20s ease infinite;
+    -webkit-animation: heartafter 20s ease infinite;
+    transition: all 5s ease;
+    -webkit-transition: all 5s ease;
+    -moz-transition: all 5s ease;
+    -ms-transition: all 5s ease;
+    -o-transition: all 5s ease;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@keyframes heartbefore {
+    0% {
+        top: 0;
+        background-color: #ffffff;
+    }
+    30% {
+        top: -100px;
+    }
+    50% {
+        background-color: #eb3f84;
+    }
+    70% {
+        top: -100px;
+    }
+    100% {
+        top: 0;
+        background-color: #ffffff;
+    }
+}
+
+@keyframes heartafter {
+    0% {
+        left: 0;
+        background-color: #ffffff;
+    }
+    30% {
+        left: -100px;
+    }
+    50% {
+        background-color: #eb3f84;
+    }
+    70% {
+        left: -100px;
+    }
+    100% {
+        left: 0;
+        background-color: #ffffff;
+    }
+}
+
+@keyframes heart {
+    0% {
+        background-color: #ffffff;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        border-radius: 200px;
+        -webkit-border-radius: 200px;
+        -moz-border-radius: 200px;
+        -ms-border-radius: 200px;
+        -o-border-radius: 200px;
+}
+    30% {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        
+}
+    50% {
+        background-color: #eb3f84;
+    }
+    70% {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;      
+    }
+    100% {
+        background-color: #ffffff;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        border-radius: 200px;
+        -webkit-border-radius: 200px;
+        -moz-border-radius: 200px;
+        -ms-border-radius: 200px;
+        -o-border-radius: 200px;
+    }
+}
+
+@keyframes bgchange {
+    0% {
+        background-color: #eb3f84;
+    }
+    50% {
+        background-color: #ffffff;
+    }
+    100% {
+        background-color: #eb3f84;
+    }
+}
+
