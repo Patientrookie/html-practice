@@ -13,7 +13,7 @@
             "type": "browser-preview",
             "request": "launch",
             "name": "Browser Preview: Launch",
-            "url": "file:///C:/Users/xiaqi/work/local-project/html-practice/window-shades/window-shades-practice.html"
+            "url": "file:///C:/Users/xiaqi/work/local-project/html-practice/time-circle/time-circle-practice.html"
         }
     ]
 }
