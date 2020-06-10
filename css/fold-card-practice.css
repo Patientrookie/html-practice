@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,body {
+    width: 100%;
+    height: 100%; 
+}
+
+body {  
+    background: linear-gradient(to bottom right, #eee8dd, #e3d9c6);
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-color: #e3d9c6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+
+.outside,.inside {
+    position: absolute;
+    /* right 定义了定位元素右外边距边界与其包含块右边界之间的偏移 */
+    right: 0;
+    width: 300px;
+    height: 300px;
+}
+
+.outside {
+    /* z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。 */
+    z-index: 100;
+    /* perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图 */
+    perspective: 1000px;
+}
+
+.outside-container {
+    width: 100%;
+    height: 100%;   
+    /*transform-style属性规定如何在3D空间中呈现被嵌套的元素preserve-3d子元素将保留其3D位置。*/
+    transform-style: preserve-3d;
+    /*transform-origin属性允许您改变被转换元素的位置。*/
+    transform-origin: left;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+
+.card:hover .outside-container{
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+}
+
+.card:hover{
+    width: 600px;
+  }
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* right 0 右对齐 */
+    right: 0;
+    background-color: #e3d9c6;
+}
+
+.card-front-top {
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(to bottom, #ff73b9, #ff40a1);
+    /* clip-path 属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。 */
+    clip-path: polygon(0 0,100% 0,100% 90%,57% 90%,50% 100%,43% 90%,0 90%);
+}
+
+.card-front-top img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-front-bottom {
+    font-size: 26px;
+    color: #ff40a1;
+    /* font-weight 属性设置文本的粗细 */
+    font-weight: 800;
+    /* text-align 属性规定元素中的文本的水平对齐方式。 */
+    text-align: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+
+.video-container{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0,100% 0,90% 50%,100% 100%,0 100%);
+}
+
+
+.inside {
+    /* z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。 */
+    z-index: 99;
+}
+
+.inside-container{
+    width: 300px;
+    height: 100%;
+    display: flex;
+    /* flex-direction 属性规定灵活项目的方向 column 灵活的项目将垂直显示，正如一个列一样。 */
+    flex-direction: column;
+    /* justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 space-between 项目位于各行之间留有空白的容器内。 */
+    justify-content: space-between;
+    /* align-items 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。 */
+    align-items: center;
+    text-align: center;
+    font-size:24px;
+    color:#ff40a1;
+    font-weight: 800;
+    padding:20px;
+    /* box-sizing 属性允许您以特定的方式定义匹配某个区域的特定元素。 */
+    box-sizing: border-box;
+  }
+  .inside-container p{
+    color:#333;
+    font-size:20px;
+  }
+  .inside-container .btn{
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    border:3px solid #ff40a1;
+    color:#ff40a1;
+    border-radius: 5px;
+  }

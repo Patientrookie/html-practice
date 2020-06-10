@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片折叠动画</title>
+    <link rel="stylesheet" href="../css/fold-card-practice.css">
+</head>
+<body>
+    <!-- 折叠卡片容器 -->
+    <div class="card">
+        <!-- 折叠卡片封面容器 -->
+        <div class="outside">
+            <!-- 折叠卡片封面子容器 -->
+            <div class="outside-container">
+                <!-- 折叠卡片封面子容器正面 -->
+                <div class="card-front">
+                    <!-- 折叠卡片封面子容器正面上半部分 -->
+                    <div class="card-front-top">
+                        <img src="../img/fold-card/pic.jpg" alt="">
+                    </div>
+                    <!-- 折叠卡片封面子容器正面下半部分 -->
+                    <div class="card-front-bottom">View Me</div>
+                </div>
+                <!-- 折叠卡片封面子容器反面 -->
+                <div class="card-back">
+                    <!-- video source 和 src区别 -->
+                    <!-- source 可以写多个 并指定类型-->
+                    <!-- src 只可以写一个 -->
+                    <video class="video-container" autoplay loop muted><source src="../img/fold-card/video.mp4"></video>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 折叠卡片封底容器 -->
+        <div class="inside">
+            <!-- 折叠卡片封底子容器 -->
+            <div class="inside-container">
+                <h3>For urban lovers</h3>
+                <p>For urban loversFor urban loversFor urban loversFor urban lovers</p>
+                <a href="#" class="btn">view deals</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
