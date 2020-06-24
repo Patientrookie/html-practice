@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    /* justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 */
+    justify-content: center;
+    /* align-items 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。 */
+    align-items: center;
+    min-height: 100vh;
+    background: #010b10;
+}
+
+.loader {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    /* filter 属性定义了元素(通常是<img>)的可视效果(例如：模糊与饱和度)。 */
+    filter: url(#gooey);
+    -webkit-filter: url(#gooey);
+}
+
+svg {
+    width: 0;
+    height: 0;
+}
+
+.loader span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    animation: liquid 4s ease-in-out infinite;
+    -webkit-animation: liquid 4s ease-in-out infinite;
+    /*animation-delay属性定义动画什么时候开始。*/
+    /*animation-delay: time;
+    可选。定义动画开始前等待的时间，以秒或毫秒计。默认值为0*/
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.loader span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(#fce4ec,#03a9f4);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    /* box-shadow属性可以设置一个或多个下拉阴影的框 */
+    box-shadow: 0 0 30px #03a9f4;
+}
+
+@keyframes liquid {
+    0%{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    50%,100%{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
