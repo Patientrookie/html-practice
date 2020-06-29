@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Poppins',sans-serif; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;  /* flex-direction  属性规定灵活项目的方向。注意：如果元素不是弹性盒对象的元素，则 flex-direction 属性不起作用。 */
+    background: #040d15;
+    /* font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap; */
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    /*inline-block行内块元素*/padding: 12px 36px;
+    margin: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    background: linear-gradient(90deg,#0162c8,#55e7fc);
+    overflow: hidden;
+}
+
+a:nth-child(2){
+    background: linear-gradient(90deg,#755bea,#ff72c0);
+}
+
+span {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    /*让鼠标事件失效（链接、点击等事件）*/pointer-events: none;
+    border-radius: 50%;
+    animation: ripple 1s linear infinite;
+    -webkit-animation: ripple 1s linear infinite;
+}
+
+@keyframes ripple{
+    0%{
+       width: 0px;
+       height: 0px; 
+       opacity: 0.5;
+    }
+    100%{
+       width: 500px;
+       height: 500px; 
+       opacity: 0;
+    }
+}
